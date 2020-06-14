@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.908,E:\C_projects\msgsrv2\main.cpp=F:\my_document\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.174,E:\C_projects\msgsrv2\msgsrv2.cbproj=F:\my_document\RAD Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.908,E:\C_projects\msgsrv2\user_interface.cpp=E:\C_projects\msgsrv2\main.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.896,=F:\my_document\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.065,=E:\C_projects\msgsrv2\lib\smsdll.lib</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.768,E:\C_projects\msgsrv2\dm_global.h=E:\C_projects\msgsrv2\Unit1.h</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.440,=F:\my_document\RAD Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.628,F:\Projects\MyProjects\msgsrv2\lib\smsdll.lib=</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.065,=E:\C_projects\msgsrv2\lib\ws2_32.lib</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.565,=E:\C_projects\msgsrv2\SMSDLL.h</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.036,=F:\Projects\MyProjects\msgsrv2\lib\smsdll.lib</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.549,E:\C_projects\msgsrv2\dm_main.cpp=E:\C_projects\msgsrv2\dm_global.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.486,E:\C_projects\msgsrv2\net_compon.cpp=E:\C_projects\msgsrv2\Unit1.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.908,E:\C_projects\msgsrv2\user_interface.h=E:\C_projects\msgsrv2\main.h</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.768,E:\C_projects\msgsrv2\dm_global.dfm=E:\C_projects\msgsrv2\Unit1.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.768,E:\C_projects\msgsrv2\dm_global.cpp=E:\C_projects\msgsrv2\Unit1.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.049,=E:\C_projects\msgsrv2\lib\mswsock.lib</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.361,=E:\C_projects\msgsrv2\manip_ini_file.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.908,E:\C_projects\msgsrv2\main.h=F:\my_document\RAD Studio\Projects\Unit1.h</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.390,F:\Projects\MyProjects\msgsrv2\net_compon.cpp=</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.486,E:\C_projects\msgsrv2\net_compon.h=E:\C_projects\msgsrv2\Unit1.h</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.549,E:\C_projects\msgsrv2\dm_main.dfm=E:\C_projects\msgsrv2\dm_global.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.049,=E:\C_projects\msgsrv2\Unit1.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.158,=E:\C_projects\msgsrv2\Unit1.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.502,=E:\C_projects\msgsrv2\manip_msg.cpp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.908,E:\C_projects\msgsrv2\user_interface.dfm=E:\C_projects\msgsrv2\main.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.908,E:\C_projects\msgsrv2\main.dfm=F:\my_document\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.549,E:\C_projects\msgsrv2\dm_main.h=E:\C_projects\msgsrv2\dm_global.h</Transaction>
+  </Transactions>
+</BorlandProject>
