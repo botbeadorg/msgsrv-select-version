@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/12/15 13:00:42.000.448,=E:\RadProjects\File1.cpp</Transaction>
+    <Transaction>2020/12/15 13:00:42.000.412,=E:\RadProjects\Project1PCH1.h</Transaction>
+    <Transaction>2020/12/15 13:01:02.000.773,E:\RadProjects\File1.cpp=E:\RadProjects\confSrv\test\File1.cpp</Transaction>
+    <Transaction>2020/12/15 13:01:07.000.758,E:\RadProjects\Project1PCH1.h=E:\RadProjects\confSrv\test\Project1PCH1.h</Transaction>
+    <Transaction>2020/12/15 13:01:14.000.761,E:\RadProjects\confSrv\test\Project1PCH1.h=E:\RadProjects\confSrv\test\testPCH1.h</Transaction>
+    <Transaction>2020/12/15 13:01:14.000.765,E:\RadProjects\Project1.cbproj=E:\RadProjects\confSrv\test\test.cbproj</Transaction>
+    <Transaction>2020/12/15 13:01:56.000.850,=E:\RadProjects\confSrv\ws2_32.lib</Transaction>
+    <Transaction>2020/12/15 13:01:56.000.829,=E:\RadProjects\confSrv\mswsock.lib</Transaction>
+    <Transaction>2020/12/15 13:01:56.000.823,=E:\RadProjects\confSrv\mswsock.a</Transaction>
+    <Transaction>2020/12/15 13:01:56.000.839,=E:\RadProjects\confSrv\ws2_32.a</Transaction>
+  </Transactions>
+</BorlandProject>
