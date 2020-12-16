@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2020/12/15 13:01:37.000.123,E:\RadProjects\ProjectGroup1.groupproj=E:\RadProjects\confSrv\confSrvGroup.groupproj</Transaction>
+    <Transaction>2020/12/15 13:01:37.000.123,E:\RadProjects\confSrv\confSrvGroup.groupproj=E:\RadProjects\ProjectGroup1.groupproj</Transaction>
   </Transactions>
 	<Default.Personality>
-		<Projects ActiveProject="E:\RadProjects\confSrv\test\test.cbproj"/>
+		<Projects ActiveProject="E:\RadProjects\confSrv\confSrv.cbproj"/>
 	</Default.Personality>
 </BorlandProject>

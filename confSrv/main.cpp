@@ -34,6 +34,31 @@ struct conf_backsrv {
 	char backsrv_name[65];
 	char backip[257];
 };
+
+struct conf_dbsrv {
+	bool utf8;
+	int srv_index;
+    int gate_srv_port;
+	int db_srv_port;
+	int log_srv_port;
+	int sesn_srv_port;
+	int name_srv_port;
+	int mysql_port;
+	char srv_name[33];
+    char gate_srv_ip[33];
+	char db_srv_ip[33];
+	char log_srv_ip[33];
+	char sesn_srv_ip[33];
+	char name_srv_ip[33];
+	char mysql_host[33];
+	char mysql_usr[33];
+	char mysql_db[33];
+	char mysql_pwd[65];
+	char boy_name_file[129];
+	char girl_name_file[129];
+    char esqltool_path[129];
+};
+
 #pragma pack()
 
 #define BUFLEN 1024
@@ -73,11 +98,11 @@ enum confcmd_ord {
 const AnsiString confcmd[CONFCMDARYLEN] = {"session", "name", "logic", "logger", "locallog", "gate", "db", "back", "am"
 };
 
-enum backsrv_conf_ord {
-	bksrv_common, bksrv_db, bksrv_srv, bksrv_backsrv, bksrv_conf_end
-};
+// enum backsrv_conf_ord {
+// bksrv_common, bksrv_db, bksrv_srv, bksrv_backsrv, bksrv_conf_end
+// };
 
-const AnsiString backsrv_conf[BACKSRV_SEC_NUM] = {"common", "db", "srv", "backsrv"};
+// const AnsiString backsrv_conf[BACKSRV_SEC_NUM] = {"common", "db", "srv", "backsrv"};
 
 #pragma argsused
 
@@ -473,6 +498,48 @@ int handle_cmd(int fd, char *buf, int buf_len) {
 					MoveMemory(c->backsrv_name, AnsiString(str).c_str(), AnsiString(str).Length());
 					str = DataModule1->UniQuery1->FieldByName("backip")->AsString;
 					MoveMemory(c->backip, AnsiString(str).c_str(), AnsiString(str).Length());
+					send(fd, (const char *)c, sizeof *c, 0);
+					delete c;
+				}
+				else if (tmp0 == confcmd[db]) {
+					conf_dbsrv * c = new conf_dbsrv;
+					SecureZeroMemory(c, sizeof *c);
+
+					c->utf8 = (bool) DataModule1->UniQuery1->FieldByName("utf8")->AsInteger;
+					c->srv_index = DataModule1->UniQuery1->FieldByName("srv_index")->AsInteger;
+					c->gate_srv_port = DataModule1->UniQuery1->FieldByName("gate_srv_port")->AsInteger;
+					c->db_srv_port = DataModule1->UniQuery1->FieldByName("db_srv_port")->AsInteger;
+					c->log_srv_port = DataModule1->UniQuery1->FieldByName("log_srv_port")->AsInteger;
+					c->sesn_srv_port = DataModule1->UniQuery1->FieldByName("sesn_srv_port")->AsInteger;
+					c->name_srv_port = DataModule1->UniQuery1->FieldByName("name_srv_port")->AsInteger;
+					c->mysql_port = DataModule1->UniQuery1->FieldByName("mysql_port")->AsInteger;
+					str = DataModule1->UniQuery1->FieldByName("srv_name")->AsString;
+					MoveMemory(c->srv_name, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("boy_name_file")->AsString;
+					MoveMemory(c->boy_name_file, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("girl_name_file")->AsString;
+					MoveMemory(c->girl_name_file, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("gate_srv_ip")->AsString;
+					MoveMemory(c->gate_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("db_srv_ip")->AsString;
+					MoveMemory(c->db_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("log_srv_ip")->AsString;
+					MoveMemory(c->log_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("sesn_srv_ip")->AsString;
+					MoveMemory(c->sesn_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("name_srv_ip")->AsString;
+					MoveMemory(c->name_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("mysql_host")->AsString;
+					MoveMemory(c->mysql_host, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("mysql_usr")->AsString;
+					MoveMemory(c->mysql_usr, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("mysql_pwd")->AsString;
+					MoveMemory(c->mysql_pwd, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("mysql_db")->AsString;
+					MoveMemory(c->mysql_db, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("esqltool_path")->AsString;
+					MoveMemory(c->esqltool_path, AnsiString(str).c_str(), AnsiString(str).Length());
+
 					send(fd, (const char *)c, sizeof *c, 0);
 					delete c;
 				}

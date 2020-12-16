@@ -46,7 +46,30 @@ backsrv_domain TEXT DEFAULT '0.0.0.0', \
 srv_name TEXT NOT NULL, \
 backsrv_name TEXT NOT NULL, \
 backip TEXT DEFAULT '', \
-rowid_2th INTEGER PRIMARY KEY AUTOINCREMENT );");
+rowid_2th INTEGER PRIMARY KEY AUTOINCREMENT );create table if not exists db( \
+srv_name text not null, \
+srv_index integer not null, \
+boy_name_file text not null, \
+girl_name_file text not null, \
+gate_srv_ip text default '0.0.0.0', \
+gate_srv_port integer not null, \
+db_srv_ip text default '0.0.0.0', \
+db_srv_port integer not null, \
+log_srv_ip text default '127.0.0.1', \
+log_srv_port integer not null, \
+sesn_srv_ip text default '127.0.0.1', \
+sesn_srv_port integer not null, \
+name_srv_ip text default '127.0.0.1', \
+name_srv_port integer not null, \
+mysql_host text default 'localhost', \
+mysql_port integer default 3306, \
+mysql_usr text default 'root', \
+mysql_pwd text not null, \
+mysql_db text not null, \
+utf8 integer default 1 check(utf8 = 1 or utf8 = 0), \
+esqltool_path text not null, \
+rowid_2th integer primary key autoincrement \
+);");
         UniScript1->Execute();
         UniQuery1->Connection = UniConnection1;
 }

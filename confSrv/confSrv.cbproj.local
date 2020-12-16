@@ -3,24 +3,24 @@
 	<Transactions>
     <Transaction>2020/12/14 16:16:43.000.068,=E:\RadProjects\Project1PCH1.h</Transaction>
     <Transaction>2020/12/14 16:16:43.000.096,=E:\RadProjects\File1.cpp</Transaction>
-    <Transaction>2020/12/14 16:17:05.000.797,E:\RadProjects\confSrv\main.cpp=E:\RadProjects\File1.cpp</Transaction>
-    <Transaction>2020/12/14 16:17:18.000.771,E:\RadProjects\confSrv\confSrvPCH1.h=E:\RadProjects\Project1PCH1.h</Transaction>
-    <Transaction>2020/12/14 16:17:26.000.225,E:\RadProjects\confSrv\confSrv.cbproj=E:\RadProjects\Project1.cbproj</Transaction>
+    <Transaction>2020/12/14 16:17:05.000.797,E:\RadProjects\File1.cpp=E:\RadProjects\confSrv\main.cpp</Transaction>
+    <Transaction>2020/12/14 16:17:18.000.771,E:\RadProjects\Project1PCH1.h=E:\RadProjects\confSrv\confSrvPCH1.h</Transaction>
+    <Transaction>2020/12/14 16:17:26.000.225,E:\RadProjects\Project1.cbproj=E:\RadProjects\confSrv\confSrv.cbproj</Transaction>
     <Transaction>2020/12/14 16:17:35.000.720,=E:\RadProjects\confSrv\mswsock.a</Transaction>
     <Transaction>2020/12/14 16:17:35.000.728,=E:\RadProjects\confSrv\ws2_32.a</Transaction>
     <Transaction>2020/12/14 16:29:07.000.777,=E:\RadProjects\confSrv\mswsock.lib</Transaction>
     <Transaction>2020/12/14 16:29:07.000.787,=E:\RadProjects\confSrv\ws2_32.lib</Transaction>
     <Transaction>2020/12/15 08:27:22.000.917,=E:\RadProjects\confSrv\Unit1.cpp</Transaction>
-    <Transaction>2020/12/15 08:29:42.000.362,E:\RadProjects\confSrv\Unit1.dfm=E:\RadProjects\confSrv\compon.dfm</Transaction>
-    <Transaction>2020/12/15 08:29:42.000.362,E:\RadProjects\confSrv\Unit1.cpp=E:\RadProjects\confSrv\compon.cpp</Transaction>
-    <Transaction>2020/12/15 08:29:42.000.362,E:\RadProjects\confSrv\Unit1.h=E:\RadProjects\confSrv\compon.h</Transaction>
-    <Transaction>2020/12/15 11:27:49.000.915,E:\RadProjects\confSrv\mswsock.lib=</Transaction>
+    <Transaction>2020/12/15 08:29:42.000.362,E:\RadProjects\confSrv\compon.dfm=E:\RadProjects\confSrv\Unit1.dfm</Transaction>
+    <Transaction>2020/12/15 08:29:42.000.362,E:\RadProjects\confSrv\compon.h=E:\RadProjects\confSrv\Unit1.h</Transaction>
+    <Transaction>2020/12/15 08:29:42.000.362,E:\RadProjects\confSrv\compon.cpp=E:\RadProjects\confSrv\Unit1.cpp</Transaction>
     <Transaction>2020/12/15 11:27:49.000.927,E:\RadProjects\confSrv\ws2_32.lib=</Transaction>
-    <Transaction>2020/12/15 11:28:20.000.650,E:\RadProjects\confSrv\mswsock.a=</Transaction>
+    <Transaction>2020/12/15 11:27:49.000.915,E:\RadProjects\confSrv\mswsock.lib=</Transaction>
     <Transaction>2020/12/15 11:28:20.000.661,E:\RadProjects\confSrv\ws2_32.a=</Transaction>
+    <Transaction>2020/12/15 11:28:20.000.650,E:\RadProjects\confSrv\mswsock.a=</Transaction>
     <Transaction>2020/12/15 11:28:37.000.427,=E:\RadProjects\confSrv\ws2_32.lib</Transaction>
-    <Transaction>2020/12/15 11:28:37.000.399,=E:\RadProjects\confSrv\mswsock.a</Transaction>
-    <Transaction>2020/12/15 11:28:37.000.417,=E:\RadProjects\confSrv\ws2_32.a</Transaction>
     <Transaction>2020/12/15 11:28:37.000.406,=E:\RadProjects\confSrv\mswsock.lib</Transaction>
+    <Transaction>2020/12/15 11:28:37.000.417,=E:\RadProjects\confSrv\ws2_32.a</Transaction>
+    <Transaction>2020/12/15 11:28:37.000.399,=E:\RadProjects\confSrv\mswsock.a</Transaction>
   </Transactions>
 </BorlandProject>
