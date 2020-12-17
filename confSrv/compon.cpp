@@ -23,14 +23,14 @@ __fastcall TDataModule1::TDataModule1(TComponent* Owner) : TDataModule(Owner) {
 
 // ---------------------------------------------------------------------------
 void __fastcall TDataModule1::DataModuleCreate(TObject *Sender) {
-	UniConnection1->ProviderName = L"SQLite";
-	UniConnection1->SpecificOptions->Values[L"Direct"] = L"True";
-	UniConnection1->SpecificOptions->Values[L"ForceCreateDatabase"] = L"True";
-	UniConnection1->Database = exe_path + L"srvConf.db";
-	UniConnection1->Connect();
-	UniScript1->Connection = UniConnection1;
-	UniScript1->SQL->Clear();
-	UniScript1->SQL->Add("CREATE TABLE IF NOT EXISTS back ( \
+        UniConnection1->ProviderName = L"SQLite";
+        UniConnection1->SpecificOptions->Values[L"Direct"] = L"True";
+        UniConnection1->SpecificOptions->Values[L"ForceCreateDatabase"] = L"True";
+        UniConnection1->Database = exe_path + L"srvConf.db";
+        UniConnection1->Connect();
+        UniScript1->Connection = UniConnection1;
+        UniScript1->SQL->Clear();
+        UniScript1->SQL->Add("CREATE TABLE IF NOT EXISTS back ( \
 spguid INTEGER NOT NULL,  \
 utf8 INTEGER NOT NULL CHECK(utf8 = 1 or utf8 = 0), \
 db_port INTEGER DEFAULT 3306, \
@@ -81,8 +81,30 @@ mysql_pwd text not null,\
 mysql_db text not null,\
 utf8 integer default 1,\
 rowid_2th integer primary key autoincrement\
+);CREATE TABLE if not exists logic (\
+srv_name TEXT NOT NULL,\
+srv_index INTEGER NOT NULL,\
+zone_open_time TEXT NOT NULL,\
+zone_merge_time TEXT NOT NULL DEFAULT '',\
+spid TEXT NOT NULL,\
+spguid INTEGER NOT NULL DEFAULT 1,\
+gate_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
+gate_srv_port INTEGER NOT NULL,\
+sesn_srv_ip TEXT NOT NULL,\
+sesn_srv_port INTEGER NOT NULL,\
+log_srv_ip TEXT NOT NULL,\
+log_srv_port INTEGER NOT NULL,\
+db_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
+db_srv_port INTEGER NOT NULL,\
+am_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
+am_srv_port INTEGER NOT NULL,\
+mgr_srv_ip TEXT NOT NULL DEFAULT '',\
+mgr_srv_port INTEGER NOT NULL,\
+locallog_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
+locallog_srv_port INTEGER NOT NULL,\
+CHECK (-1 < spguid and spguid < 256)\
 );");
-	UniScript1->Execute();
-	UniQuery1->Connection = UniConnection1;
+        UniScript1->Execute();
+        UniQuery1->Connection = UniConnection1;
 }
 // ---------------------------------------------------------------------------
