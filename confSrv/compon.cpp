@@ -23,14 +23,14 @@ __fastcall TDataModule1::TDataModule1(TComponent* Owner) : TDataModule(Owner) {
 
 // ---------------------------------------------------------------------------
 void __fastcall TDataModule1::DataModuleCreate(TObject *Sender) {
-        UniConnection1->ProviderName = L"SQLite";
-        UniConnection1->SpecificOptions->Values[L"Direct"] = L"True";
-        UniConnection1->SpecificOptions->Values[L"ForceCreateDatabase"] = L"True";
-        UniConnection1->Database = exe_path + L"srvConf.db";
-        UniConnection1->Connect();
-        UniScript1->Connection = UniConnection1;
-        UniScript1->SQL->Clear();
-        UniScript1->SQL->Add("CREATE TABLE IF NOT EXISTS back ( \
+	UniConnection1->ProviderName = L"SQLite";
+	UniConnection1->SpecificOptions->Values[L"Direct"] = L"True";
+	UniConnection1->SpecificOptions->Values[L"ForceCreateDatabase"] = L"True";
+	UniConnection1->Database = exe_path + L"srvConf.db";
+	UniConnection1->Connect();
+	UniScript1->Connection = UniConnection1;
+	UniScript1->SQL->Clear();
+	UniScript1->SQL->Add("CREATE TABLE IF NOT EXISTS back ( \
 spguid INTEGER NOT NULL,  \
 utf8 INTEGER NOT NULL CHECK(utf8 = 1 or utf8 = 0), \
 db_port INTEGER DEFAULT 3306, \
@@ -69,8 +69,20 @@ mysql_db text not null, \
 utf8 integer default 1 check(utf8 = 1 or utf8 = 0), \
 esqltool_path text not null, \
 rowid_2th integer primary key autoincrement \
+);create table if not exists name(\
+spguid integer not null,\
+srv_name text not null,\
+name_srv_ip text default '0.0.0.0',\
+name_srv_port integer not null check(1 <= name_srv_port and name_srv_port <= 65535),\
+mysql_host text default 'localhost',\
+mysql_port integer default 3306,\
+mysql_usr text default 'root',\
+mysql_pwd text not null,\
+mysql_db text not null,\
+utf8 integer default 1,\
+rowid_2th integer primary key autoincrement\
 );");
-        UniScript1->Execute();
-        UniQuery1->Connection = UniConnection1;
+	UniScript1->Execute();
+	UniQuery1->Connection = UniConnection1;
 }
 // ---------------------------------------------------------------------------
