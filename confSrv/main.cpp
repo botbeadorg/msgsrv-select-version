@@ -72,12 +72,45 @@ struct conf_namesrv {
 	char mysql_pwd[65];
 };
 
+struct conf_logicsrv {
+	int srv_index;
+	int spguid;
+	int gate_srv_port;
+	int sesn_srv_port;
+	int log_srv_port;
+	int db_srv_port;
+	int am_srv_port;
+	int back_srv_port;
+	int locallog_srv_port;
+	int world_srv_port;
+	char spid[20];
+	char zone_open_time[20];
+	char zone_merge_time[20];
+	char srv_name[33];
+	char gate_srv_ip[33];
+	char sesn_srv_ip[33];
+	char log_srv_ip[33];
+	char db_srv_ip[33];
+	char am_srv_ip[33];
+	char back_srv_ip[33];
+	char locallog_srv_ip[33];
+	char world_srv_ip[33];
+};
+
+struct conf_logicxsrv {
+	int id;
+	int port;
+	int login_port;
+	char host[33];
+	char login_ip[33];
+};
+
 #pragma pack()
 
 #define BUFLEN 1024
 #define NS_IN6ADDRSZ 16
 #define NS_INT16SZ 2
-#define CONFCMDARYLEN 9
+#define CONFCMDARYLEN
 
 #define CLOSESOCKET 0
 #define RETRY 1
@@ -105,11 +138,10 @@ int handle_cmd(int, char *, int);
 const char *retry = "retry";
 
 enum confcmd_ord {
-	session, name, logic, logger, locallog, gate, db, back, am, other
+	session, name, logic, logger, locallog, gate, db, back, am, logic_x, other
 };
 
-const AnsiString confcmd[CONFCMDARYLEN] = {"session", "name", "logic", "logger", "locallog", "gate", "db", "back", "am"
-};
+const AnsiString confcmd[] = {"session", "name", "logic", "logger", "locallog", "gate", "db", "back", "am", "logic_x"};
 
 // enum backsrv_conf_ord {
 // bksrv_common, bksrv_db, bksrv_srv, bksrv_backsrv, bksrv_conf_end
@@ -579,6 +611,71 @@ int handle_cmd(int fd, char *buf, int buf_len) {
 
 					send(fd, (const char *)c, sizeof *c, 0);
 					delete c;
+				}
+				else if (tmp0 == confcmd[logic]) {
+					conf_logicsrv * c = new conf_logicsrv;
+					SecureZeroMemory(c, sizeof *c);
+
+					c->srv_index = DataModule1->UniQuery1->FieldByName("srv_index")->AsInteger;
+					c->spguid = DataModule1->UniQuery1->FieldByName("spguid")->AsInteger;
+					c->gate_srv_port = DataModule1->UniQuery1->FieldByName("gate_srv_port")->AsInteger;
+					c->sesn_srv_port = DataModule1->UniQuery1->FieldByName("sesn_srv_port")->AsInteger;
+					c->log_srv_port = DataModule1->UniQuery1->FieldByName("log_srv_port")->AsInteger;
+					c->db_srv_port = DataModule1->UniQuery1->FieldByName("db_srv_port")->AsInteger;
+					c->am_srv_port = DataModule1->UniQuery1->FieldByName("am_srv_port")->AsInteger;
+					c->back_srv_port = DataModule1->UniQuery1->FieldByName("back_srv_port")->AsInteger;
+					c->locallog_srv_port = DataModule1->UniQuery1->FieldByName("locallog_srv_port")->AsInteger;
+					c->world_srv_port = DataModule1->UniQuery1->FieldByName("world_srv_port")->AsInteger;
+					str = DataModule1->UniQuery1->FieldByName("spid")->AsString;
+					MoveMemory(c->spid, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("zone_open_time")->AsString;
+					MoveMemory(c->zone_open_time, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("zone_merge_time")->AsString;
+					MoveMemory(c->zone_merge_time, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("srv_name")->AsString;
+					MoveMemory(c->srv_name, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("gate_srv_ip")->AsString;
+					MoveMemory(c->gate_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("sesn_srv_ip")->AsString;
+					MoveMemory(c->sesn_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("log_srv_ip")->AsString;
+					MoveMemory(c->log_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("db_srv_ip")->AsString;
+					MoveMemory(c->db_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("am_srv_ip")->AsString;
+					MoveMemory(c->am_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("back_srv_ip")->AsString;
+					MoveMemory(c->back_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("locallog_srv_ip")->AsString;
+					MoveMemory(c->locallog_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+					str = DataModule1->UniQuery1->FieldByName("world_srv_ip")->AsString;
+					MoveMemory(c->world_srv_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+
+					send(fd, (const char *)c, sizeof *c, 0);
+					delete c;
+				}
+				else if (tmp0 == confcmd[logic_x]) {
+					conf_logicxsrv *c = 0;
+					conf_logicxsrv *ca = new conf_logicxsrv[DataModule1->UniQuery1->RecordCount];
+					i = 0;
+					while (i < DataModule1->UniQuery1->RecordCount) {
+						c = &(ca[i]);
+						SecureZeroMemory(c, sizeof *c);
+
+						c->id = DataModule1->UniQuery1->FieldByName("id")->AsInteger;
+						c->port = DataModule1->UniQuery1->FieldByName("port")->AsInteger;
+						c->login_port = DataModule1->UniQuery1->FieldByName("login_port")->AsInteger;
+						str = DataModule1->UniQuery1->FieldByName("host")->AsString;
+						MoveMemory(c->host, AnsiString(str).c_str(), AnsiString(str).Length());
+						str = DataModule1->UniQuery1->FieldByName("login_ip")->AsString;
+						MoveMemory(c->login_ip, AnsiString(str).c_str(), AnsiString(str).Length());
+
+						++i;
+						DataModule1->UniQuery1->Next();
+					}
+
+					send(fd, (const char *)ca, sizeof(conf_logicxsrv) * DataModule1->UniQuery1->RecordCount, 0);
+					delete ca;
 				}
 			}
 			r = SUCCESS;

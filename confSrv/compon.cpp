@@ -90,19 +90,29 @@ spid TEXT NOT NULL,\
 spguid INTEGER NOT NULL DEFAULT 1,\
 gate_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
 gate_srv_port INTEGER NOT NULL,\
-sesn_srv_ip TEXT NOT NULL,\
+sesn_srv_ip TEXT NOT NULL default '127.0.0.1',\
 sesn_srv_port INTEGER NOT NULL,\
-log_srv_ip TEXT NOT NULL,\
+log_srv_ip TEXT NOT NULL default '127.0.0.1',\
 log_srv_port INTEGER NOT NULL,\
 db_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
 db_srv_port INTEGER NOT NULL,\
 am_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
 am_srv_port INTEGER NOT NULL,\
-mgr_srv_ip TEXT NOT NULL DEFAULT '',\
-mgr_srv_port INTEGER NOT NULL,\
+back_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
+back_srv_port INTEGER NOT NULL,\
 locallog_srv_ip TEXT NOT NULL DEFAULT '127.0.0.1',\
 locallog_srv_port INTEGER NOT NULL,\
+world_srv_ip text,\
+world_srv_port int,\
+rowid_2th integer primary key autoincrement,\
 CHECK (-1 < spguid and spguid < 256)\
+);create table if not exists logic_x( \
+id integer,\
+host text,\
+port integer,\
+login_ip text,\
+login_port integer,\
+rawid_2th integer primary key autoincrement\
 );");
         UniScript1->Execute();
         UniQuery1->Connection = UniConnection1;
